@@ -13,7 +13,7 @@ const NavLink: React.FC<NavLinkProps> = ({ path, title, icon, onClick }) => {
 
   return (
     <Link to={path} onClick={onClick} className={`${styles.navLink} ${location.pathname === path && styles.active}`}>
-      <img src={icon} />
+      <img src={icon} alt='flag'/>
       <span>{title}</span>
     </Link>
   );
