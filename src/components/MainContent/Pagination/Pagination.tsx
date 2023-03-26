@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa';

@@ -1,5 +1,4 @@
 import styles from './styles.module.scss';
-import { News } from 'models/news';
 import dayjs from 'dayjs';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store/store';
