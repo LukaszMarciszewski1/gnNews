@@ -38,7 +38,9 @@ const MainContent: React.FC = () => {
     <div className={styles.mainContent}>
       {error && <div>Error</div>}
       {isLoading ? <div>Loading...</div> : <NewsCardList data={currentNews} view={view} />}
-      <Pagination totalNews={newsData?.length} maxNewsPerPage={maxNewsPerPage} changePage={handleChangePage} />
+      {newsData?.length && (
+        <Pagination totalNews={newsData?.length} maxNewsPerPage={maxNewsPerPage} changePage={handleChangePage} />
+      )}
       {isNewsPopupOpen ? (
         <Popup closePopup={handleCloseNewsPopup}>
           <NewsPopupContent />

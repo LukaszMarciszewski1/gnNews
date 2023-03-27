@@ -1,7 +1,11 @@
 export const countriesList = [
   {
+    name: 'All Countries',
+    url: 'https://www.svgrepo.com/show/6996/world.svg',
+    key: 'all',
+  },
+  {
     name: 'Argentina',
-    path: 'Argentina',
     url: 'https://newsapi.org/images/flags/ar.svg',
     key: 'ar',
   },

@@ -1,26 +1,29 @@
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeCountry } from 'store/countrySelector';
 import { countriesList } from 'db/countries';
-import {ALL_COUNTRIES} from 'constants/index'
+import { useLocation } from 'react-router-dom';
 import NavLink from 'components/common/NavLink/NavLink';
 import styles from './styles.module.scss';
 
 const SideMenu: React.FC = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
 
-  const handleSelectCountry = (key: string) => {
+  const handleSelectCountry = ( key: string ) => {
     dispatch(changeCountry(key));
   };
+
+  useEffect(() => {
+    const currentCountry = countriesList.find(
+      (country) => encodeURIComponent(country.name) === location.pathname.split('/').pop()
+    );
+    dispatch(changeCountry(currentCountry?.key));
+  }, [location.pathname]);
 
   return (
     <div className={styles.sidebar}>
       <div className={styles.countryListContainer}>
-        <NavLink
-          path={`/`}
-          onClick={() => handleSelectCountry(ALL_COUNTRIES)}
-          title={'All countries'}
-          icon={'https://www.svgrepo.com/show/6996/world.svg'}
-        />
         {countriesList.map((country, index) => (
           <NavLink
             key={index}
