@@ -1,5 +1,6 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import HomePage from 'pages/HomePage';
+import Home from 'pages/Home/Home';
+import Page404 from 'pages/Page404/Page404';
 import { countriesList } from 'db/countries';
 import { useEffect } from 'react';
 
@@ -8,16 +9,17 @@ const AppRoutes = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === '/' || location.pathname === '/country') {
+    if (location.pathname === '/') {
       navigate(`/country/${encodeURIComponent(countriesList[0].name)}`);
     }
-  }, []);
-  
+  }, [location.pathname]);
+
   return (
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/country/:id' element={<HomePage />} />
-      </Routes>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/country/:id' element={<Home />} />
+      <Route path='/*' element={<Page404 />} />
+    </Routes>
   );
 };
 

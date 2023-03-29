@@ -1,5 +1,6 @@
 @import 'styles/colors.scss';
 @import 'styles/mixins.scss';
+@import 'styles/breakpoints.scss';
 
 .sidebar {
   position: relative;
@@ -13,5 +14,8 @@
   @include scrollbar;
   padding: 0.6rem;
   overflow-y: auto;
-  max-height: calc(100vh - 140px);
+  max-height: calc(100vh - 200px);
+  @media (max-width: $sm) {
+    max-height: 250px;
+  }
 }

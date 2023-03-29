@@ -1,4 +1,5 @@
 @import 'styles/colors.scss';
+@import 'styles/breakpoints.scss';
 
 .iconButton {
   padding: 0.3rem 0.6rem;
@@ -17,5 +18,8 @@
   }
   &:last-child {
     margin-right: 0;
+  }
+  @media (max-width: $sm) {
+    padding: 0.2rem 0.4rem;
   }
 }

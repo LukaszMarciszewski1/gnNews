@@ -1,9 +1,13 @@
 @import 'styles/colors.scss';
+@import 'styles/breakpoints.scss';
 
 .newsViewTiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem;
+  @media (max-width: $sm) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .newsViewList {
