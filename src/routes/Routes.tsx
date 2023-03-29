@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Home from 'pages/Home/Home';
-import Page404 from 'pages/Page404/Page404';
+import Page404 from 'pages/404/404';
 import { countriesList } from 'db/countries';
 import { useEffect } from 'react';
 

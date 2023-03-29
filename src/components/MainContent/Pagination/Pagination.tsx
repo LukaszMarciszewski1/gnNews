@@ -18,6 +18,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalNews, maxNewsPerPage, chan
       nextLabel={<FaArrowRight />}
       pageCount={pageCount}
       onPageChange={changePage}
+      initialPage={0}
       pageRangeDisplayed={3}
       marginPagesDisplayed={1}
       containerClassName={styles.paginationBtn}
